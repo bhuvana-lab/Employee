@@ -1,12 +1,15 @@
 package com.employee.controller;
 
 
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EmployeeController {
 	
+	@Autowired EmployeeServices e_service;
 	
 	 @GetMapping(path = "/hello") 
 	 public String hello() { 
@@ -23,7 +26,7 @@ public class EmployeeController {
 	
 	@GetMapping(path = "/fulllist",produces = "list.json")
 	public Iterable<Employeetable>  employeelist(){
-		return null;
+		return e_service.findall();
 		
 	}
 	
