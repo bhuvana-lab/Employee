@@ -15,9 +15,15 @@ public class EmployeeController {
 	
 
 	@RequestMapping(path = "/employeelist")
-	public String employeelist()
+	public String helloworld()
 	{
 		return "Hello world";
+		
+	}
+	
+	@GetMapping(path = "/fulllist",produces = "list.json")
+	public Iterable<Employeetable>  employeelist(){
+		return null;
 		
 	}
 	
