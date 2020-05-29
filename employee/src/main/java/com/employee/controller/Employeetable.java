@@ -1,19 +1,27 @@
 package com.employee.controller;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Employeetable")
+@Table(name = "employer_personal_details")
 
 public class Employeetable {
 @Id	
-// @GeneratedValue(strategy = GenerationType.AUTO)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "E_id")
 private int E_id;
+@Column(name = "E_first_name")
 private String E_first_name;
+@Column(name = "E_last_name")
 private String E_last_name;
+@Column(name = "E_salary")
 private int E_salary;
+@Column(name = "E_phone")
 private int E_phone;
 public int getE_id() {
 	return E_id;
