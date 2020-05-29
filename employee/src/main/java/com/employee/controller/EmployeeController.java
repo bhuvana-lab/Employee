@@ -56,22 +56,11 @@ public class EmployeeController<integer> {
 	
 	// Save new record
 	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void newEntry(@RequestBody Employeetable Employeetable) {
-		
-		
+	public String newEntry(@RequestBody Employeetable Employeetable) {
+			
 		e_service.save(Employeetable);
-		
-//		Employeetable obj= e_service.save(Employeetable);
-		
-		// Employeetable obj= e_service.findbyId(n);
-		
-//		return (
-//				"E_id:"     +obj.getE_id() 
-//				+ "\n E_FName:"  +obj.getE_first_name()
-//				+ "\n E_LName:"  +obj.getE_last_name()
-//				+ "\n E_salary:" +obj.getE_salary()
-//				+ "\n E_phone:"  +obj.getE_phone()
-//				);
-			}
+		 return "Json inserted";
+			
+	}
 	
 }
