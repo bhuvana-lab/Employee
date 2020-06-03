@@ -1,10 +1,7 @@
 package com.employee.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class EmployeeServices {
@@ -22,8 +19,19 @@ public class EmployeeServices {
 	}
 
 	public int save(Employeetable employeetable) {
+		return e_service.save(employeetable.getE_id(), employeetable.getE_first_name(), employeetable.getE_last_name(),
+				employeetable.getE_salary(), employeetable.getE_phone());
+	}
 
-		return e_service.save(employeetable.getE_id(), employeetable.getE_first_name(), employeetable.getE_last_name(), employeetable.getE_salary(), employeetable.getE_phone());
+	public int update(int E_id, Employeetable E_phone) {
+
+		return e_service.updateById(E_id, E_phone.getE_phone());
 
 	}
+
+	public int delete(int E_id) {
+		return e_service.deleteById(E_id);
+
+	}
+
 }
